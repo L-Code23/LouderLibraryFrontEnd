@@ -3,5 +3,11 @@ export interface BookModel {
     Title: string;
     Subtitle: string;
     BookCover: string;
-    Authors: string;
+    Authors: Author[];
+}
+export interface Author{
+    id: number;
+    firstName: string;
+    lastName: string;
+    books: string[];
 }

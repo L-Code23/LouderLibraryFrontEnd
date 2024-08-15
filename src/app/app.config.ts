@@ -7,6 +7,8 @@ import {
   SocialAuthServiceConfig,
   GoogleLoginProvider,
 } from "@abacritt/angularx-social-login";
+import { provideHttpClient } from '@angular/common/http';
+import { EnvironmentDevelopement } from '../environments/environment.developement';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,13 +18,13 @@ export const appConfig: ApplicationConfig = {
     provide: 'SocialAuthServiceConfig',
     useValue: {
       autoLogin: false,
-      providers: [
+      providers: [provideHttpClient(),
         {
           id: GoogleLoginProvider.PROVIDER_ID,
           provider: new GoogleLoginProvider(
             //Remove the .apps.googleusercontent.com from the client id
             //MAKE SURE TO HIDE IT FROM GITHUB
-            "Replace with client id"
+            EnvironmentDevelopement.clientId
           ),
         },
       ],

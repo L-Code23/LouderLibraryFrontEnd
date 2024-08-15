@@ -1,0 +1,21 @@
+<p>landing works!</p>
+
+
+<nav class="navbar fixed-top bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Fixed top</a>
+    </div>
+  </nav>
+    
+    
+  @if (!loggedIn) {
+    <!-- Custom component that handles log in -->
+    <asl-google-signin-button></asl-google-signin-button>
+  }
+  @else {
+    <!-- calls our log out method -->
+    <button class="btn btn-outline-dark" (click)="signOut()">
+      Sign Out
+    </button>
+}
+    
